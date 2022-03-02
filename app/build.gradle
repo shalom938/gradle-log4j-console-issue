@@ -4,7 +4,7 @@
 
 plugins {
     id 'org.test.java-application-conventions'
-//    id 'org.javamodularity.moduleplugin' version '1.8.10'
+    id 'org.javamodularity.moduleplugin' version '1.8.10'
 }
 
 dependencies {
