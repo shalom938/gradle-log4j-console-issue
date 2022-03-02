@@ -4,6 +4,7 @@
 
 plugins {
     id 'org.test.java-library-conventions'
+//    id 'org.javamodularity.moduleplugin' version '1.8.10'
 }
 
 

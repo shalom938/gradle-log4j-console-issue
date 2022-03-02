@@ -3,10 +3,18 @@
  */
 package org.test.utilities;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.test.list.LinkedList;
 
 class JoinUtils {
+
+    private static final Logger LOGGER = LogManager.getLogger();
+
     public static String join(LinkedList source) {
+
+        LOGGER.info("join called");
+
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < source.size(); ++i) {
             if (result.length() > 0) {

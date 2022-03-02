@@ -3,14 +3,21 @@
  */
 package org.test.utilities;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.test.list.LinkedList;
 
 public class StringUtils {
+
+    private static final Logger LOGGER = LogManager.getLogger();
+
     public static String join(LinkedList source) {
+        LOGGER.info("join called");
         return JoinUtils.join(source);
     }
 
     public static LinkedList split(String source) {
+        LOGGER.info("split called");
         return SplitUtils.split(source);
     }
 }

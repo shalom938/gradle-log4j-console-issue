@@ -3,10 +3,17 @@
  */
 package org.test.utilities;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.test.list.LinkedList;
 
 class SplitUtils {
+
+    private static final Logger LOGGER = LogManager.getLogger();
+
     public static LinkedList split(String source) {
+        LOGGER.info("split called");
+
         int lastFind = 0;
         int currentFind = 0;
         LinkedList result = new LinkedList();
