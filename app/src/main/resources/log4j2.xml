@@ -4,7 +4,7 @@
         <Appender type="Console" name="STDOUT">
             <Layout type="PatternLayout" pattern="%d{COMPACT} [%t] %p %c{1} %m%n"/>
         </Appender>
-        <Appender type="File" name="File" fileName="logs/app.log">
+        <Appender type="File" name="File" fileName="logs/app.log" append="false">
             <Layout type="PatternLayout">
                 <Pattern>%d %p %C{1.} [%t] %m%n</Pattern>
             </Layout>
