@@ -1,6 +1,6 @@
 module sample.app {
     requires org.apache.commons.text;
-    requires sample.util;
+    requires sample.utilities;
     exports org.test.app;
     requires org.apache.logging.log4j;
     requires org.apache.logging.log4j.core;

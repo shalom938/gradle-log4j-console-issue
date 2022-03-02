@@ -1,4 +1,4 @@
-module sample.util {
+module sample.utilities {
     requires transitive sample.list;
     requires transitive org.apache.logging.log4j;
     requires org.apache.logging.log4j.core;

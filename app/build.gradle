@@ -7,8 +7,14 @@ plugins {
     id 'org.javamodularity.moduleplugin' version '1.8.10'
 }
 
+//disable java modularity as documented by moduleplugin
+java {
+    modularity.inferModulePath = false
+}
+tasks.named('compileJava') {
+    modularity.inferModulePath = false
+}
 
-//java.modularity.inferModulePath
 
 dependencies {
     implementation 'org.apache.commons:commons-text'
@@ -22,4 +28,13 @@ dependencies {
 application {
     mainModule = 'sample.app'
     mainClass = 'org.test.app.App'
+}
+
+test {
+    moduleOptions {
+        runOnClasspath = project.hasProperty('appTestRunOnClasspath')
+    }
+    testLogging{
+        showStandardStreams = false
+    }
 }
