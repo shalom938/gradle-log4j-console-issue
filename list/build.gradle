@@ -4,12 +4,27 @@
 
 plugins {
     id 'org.test.java-library-conventions'
-//    id 'org.javamodularity.moduleplugin' version '1.8.10'
+    id 'org.javamodularity.moduleplugin' version '1.8.10'
 }
 
+//disable java modularity as documented by org.javamodularity.moduleplugin
+java {
+    modularity.inferModulePath = false
+}
+tasks.named('compileJava') {
+    modularity.inferModulePath = false
+}
 
 dependencies {
     implementation 'org.slf4j:slf4j-api:1.7.36'
 
     testImplementation 'org.slf4j:slf4j-simple:1.7.36'
+}
+
+test {
+    moduleOptions {
+        //for testing , with -PdisableModulePlugin moduleplugin is disabled
+        //and the test suite will run with classpath in which case all works as expected.
+        runOnClasspath = project.hasProperty('disableModulePlugin')
+    }
 }

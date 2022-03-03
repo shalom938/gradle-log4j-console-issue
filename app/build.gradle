@@ -7,7 +7,7 @@ plugins {
     id 'org.javamodularity.moduleplugin' version '1.8.10'
 }
 
-//disable java modularity as documented by moduleplugin
+//disable java modularity as documented by org.javamodularity.moduleplugin
 java {
     modularity.inferModulePath = false
 }
@@ -20,9 +20,9 @@ dependencies {
     implementation 'org.apache.commons:commons-text'
     implementation project(':utilities')
 
-    implementation 'org.apache.logging.log4j:log4j-api:2.17.1'
-    implementation 'org.apache.logging.log4j:log4j-core:2.17.1'
-    implementation 'org.apache.logging.log4j:log4j-slf4j-impl:2.17.1'
+    implementation 'org.apache.logging.log4j:log4j-api'
+    implementation 'org.apache.logging.log4j:log4j-core'
+    implementation 'org.apache.logging.log4j:log4j-slf4j-impl'
 }
 
 application {
@@ -32,9 +32,8 @@ application {
 
 test {
     moduleOptions {
-        runOnClasspath = project.hasProperty('appTestRunOnClasspath')
-    }
-    testLogging{
-        showStandardStreams = false
+        //for testing , with -PdisableModulePlugin moduleplugin is disabled
+        //and the test suite will run with classpath in which case all works as expected.
+        runOnClasspath = project.hasProperty('disableModulePlugin')
     }
 }
