@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="error" strict="true" name="XMLConfigurationForUnitTests">
+<Configuration status="error" strict="true" name="MainAppXMLConfiguration">
     <Appenders>
         <Appender type="Console" name="STDOUT">
             <Layout type="PatternLayout" pattern="%d{COMPACT} [%t] %p %c{1} %m%n"/>

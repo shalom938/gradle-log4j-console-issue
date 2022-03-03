@@ -3,11 +3,18 @@
  */
 package org.test.app;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MessageUtilsTest {
+
+    @BeforeAll
+    public static void printCmd(){
+        System.out.println("command line in " + MessageUtilsTest.class + ": " + ProcessHandle.current().info().commandLine().get());
+    }
+
     @Test void testGetMessage() {
         assertEquals("Hello      World!", MessageUtils.getMessage());
     }

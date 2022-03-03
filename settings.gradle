@@ -8,4 +8,4 @@
  */
 
 rootProject.name = 'gradle-log4j-console-issue'
-include('app', 'list', 'utilities')
+include('app', 'list','list2', 'utilities')
