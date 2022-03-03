@@ -36,3 +36,11 @@ tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+
+tasks.withType(Test).configureEach{
+    beforeSuite { desc ->
+        if (desc.parent == null) {
+            println "Starting suite " + desc
+        }
+    }
+}
